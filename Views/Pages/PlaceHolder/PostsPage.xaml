@@ -4,10 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:API_Projects.Views.Pages.PlaceHolder"
-      mc:Ignorable="d" 
-      Loaded="Page_Loaded"
       d:DesignHeight="450" 
+      Loaded="Page_Loaded"
       d:DesignWidth="800"
+      mc:Ignorable="d" 
       Title="Данные с сайта PlaceHolder">
 
     <Grid>
@@ -16,10 +16,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding userId}"/>
-                        <TextBlock Text="{Binding id}"/>
-                        <TextBlock Text="{Binding title}"/>
-                        <TextBlock Text="{Binding body}"/>
+                        <Label Content="{Binding userId}"
+                               ContentStringFormat="ID пользователя: {0}"/>
+                        <Label Content="{Binding id}"
+                               ContentStringFormat="ID записи {0}"/>
+                        <Label Content="{Binding title}"/>
+                        <Label Content="{Binding body}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
