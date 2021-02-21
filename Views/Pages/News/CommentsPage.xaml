@@ -1,0 +1,37 @@
+﻿<Page x:Class="API_Projects.Views.Pages.News.CommentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:API_Projects.Views.Pages.News"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
+      Title="Комментарии">
+
+    <Grid>
+        <ListView
+            ItemsSource="{Binding comments}"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image
+                            Width="100"
+                            Height="100"
+                            Source="{Binding user.image}"/>
+                        <StackPanel>
+                            <TextBlock
+                                Text="{Binding user.name}"/>
+                            <TextBlock
+                                Text="{Binding text}"/>
+                            <TextBlock
+                                Text="{Binding created_date}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
